@@ -24,4 +24,7 @@ class WishList(models.Model):
     user = models.OneToOneField(User)
     items = models.ManyToManyField(Item)
     created_at = models.DateTimeField('作成日時', auto_now_add=True)
-    updated_at = models.DateTimeField('更新日時', auto_now=True
+    updated_at = models.DateTimeField('更新日時', auto_now=True)
+
+    def __str__(self):
+        return 'wish list - {}'.format(self.user.username)
